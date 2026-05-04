@@ -1,6 +1,8 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 
@@ -9,10 +11,14 @@ const LoginPage = () => {
 
 
   const handleRegisterWithGoogle = async () => {
-    const { data, error } = await authClient.signIn.social({
+    const { data, error, u } = await authClient.signIn.social({
       provider: "google",
     });
-    if (error) console.error("Google sign-in error:", error);
+    if (error) toast.danger(error.message);
+    if(data) {
+        toast.success("Login successful");
+        redirect('/');
+    }
   };
 
 
@@ -25,7 +31,18 @@ const LoginPage = () => {
         rememberMe: true,
         callbackURL: "/",
     });
+    console.log(loginUserData, error);
+
+    if(error){
+        toast.danger(error.message);
+    }
+
+    if(loginUserData){
+        toast.success("Login successful");
+    }
   };
+
+  
   return (
     <div className="flex justify-center items-center h-screen">
       <form

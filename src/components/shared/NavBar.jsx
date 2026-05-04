@@ -1,5 +1,10 @@
+"use client";
 import Link from "next/link";
 import { ShoppingCart } from "@gravity-ui/icons";
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
+import { redirect } from "next/navigation";
+
 
 const links = (
   <>
@@ -16,6 +21,9 @@ const links = (
 );
 
 const NavBar = () => {
+  const { data: session, isPending } = authClient.useSession();
+  const user = session?.user;
+  console.log(user);
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -60,18 +68,49 @@ const NavBar = () => {
           </div>
           <ShoppingCart className="w-7 h-7"></ShoppingCart>
         </div>
-        <Link
-          href={"/login"}
-          className="btn bg-linear-to-r from-red-400 to-orange-400 text-white"
-        >
-          Login
-        </Link>
-        <Link
-          href={"/register"}
-          className="btn border-2 bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent"
-        >
-          Register
-        </Link>
+
+        {isPending ? (
+          <span className="loading loading-spinner loading-lg"></span>
+        ) : user ? (
+          <div className="flex items-center flex-col md:flex-row">
+            <p className="">Hello, {user.name}</p>
+            <Image
+              src={user.image}
+              alt={user.name}
+              width={60}
+              height={60}
+              className="rounded-full border-2"
+            ></Image>
+            <button
+              onClick={async () => {
+                await authClient.signOut();
+                redirect("/");
+              }}
+            >
+              <Link
+                href={"/login"}
+                className="btn bg-linear-to-r from-red-400 to-orange-400 text-white"
+              >
+                Logout
+              </Link>
+            </button>
+          </div>
+        ) : (
+          <>
+            <Link
+              href={"/login"}
+              className="btn bg-linear-to-r from-red-400 to-orange-400 text-white"
+            >
+              Login
+            </Link>
+            <Link
+              href={"/register"}
+              className="btn border-2 bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent"
+            >
+              Register
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

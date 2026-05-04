@@ -1,8 +1,9 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "@heroui/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa";
 
 const RegisterPage = () => {
   const { register, handleSubmit } = useForm();
@@ -20,7 +21,11 @@ const RegisterPage = () => {
     });
 
 
-    console.log(registerUserData, error);
+    if(error) toast.danger(error.message);
+    if(registerUserData){
+        toast.success("Registration successful");
+        redirect('/login');
+    }
   };
 
   return (
