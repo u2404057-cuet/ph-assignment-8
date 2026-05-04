@@ -1,19 +1,31 @@
-'use client'
+"use client";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-
+import { FaGoogle } from "react-icons/fa";
 
 const RegisterPage = () => {
+  const { register, handleSubmit } = useForm();
 
-    const { register, handleSubmit } = useForm();
 
-    const handleRegister = (data) => {
-      const {name, email, photo, password} = data;
-    };
+  const handleRegister = async (data) => {
+    const { name, email, photo, password } = data;
 
-    return (
-        <div className="flex justify-center items-center h-screen">
-            <form
+    const { data: registerUserData , error } = await authClient.signUp.email({
+        name: name, // required
+        email: email, // required
+        password: password, // required
+        image: photo,
+        callbackURL: "/login",
+    });
+
+
+    console.log(registerUserData, error);
+  };
+
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <form
         className="card bg-base-100 w-full max-w-sm shadow-2xl shadow-red-300"
         onSubmit={handleSubmit(handleRegister)}
       >
@@ -63,12 +75,14 @@ const RegisterPage = () => {
                 Login
               </Link>
             </p>
-            <button className="btn bg-linear-to-r from-red-400 to-orange-400 mt-4 text-white">Register</button>
+            <button className="btn bg-linear-to-r from-red-400 to-orange-400 mt-4 text-white">
+              Register
+            </button>
           </fieldset>
         </div>
       </form>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default RegisterPage;

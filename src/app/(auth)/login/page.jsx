@@ -1,12 +1,30 @@
-'use client'
+"use client";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
   const { register, handleSubmit } = useForm();
 
-  const handleLogin = (data) => {
-    const {email, password} = data;
+
+  const handleRegisterWithGoogle = async () => {
+    const { data, error } = await authClient.signIn.social({
+      provider: "google",
+    });
+    if (error) console.error("Google sign-in error:", error);
+  };
+
+
+  const handleLogin = async (data) => {
+    const { email, password } = data;
+
+    const { data: loginUserData , error } = await authClient.signIn.email({
+        email: email, // required
+        password: password, // required
+        rememberMe: true,
+        callbackURL: "/",
+    });
   };
   return (
     <div className="flex justify-center items-center h-screen">
@@ -17,6 +35,13 @@ const LoginPage = () => {
         <h1 className="font-bold text-2xl text-center mt-4 bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
           Login to your account
         </h1>
+        <div className="flex justify-center">
+          <button className="btn w-10/12 btn-outline hover:bg-linear-to-r from-red-400 to-orange-400 hover:text-white" onClick={handleRegisterWithGoogle}>
+            <FaGoogle />
+            Login with Google
+          </button>
+        </div>
+        <div className="divider">OR</div>
         <div className="card-body">
           <fieldset className="fieldset">
             <label className="label">Email</label>
@@ -43,7 +68,9 @@ const LoginPage = () => {
                 Register
               </Link>
             </p>
-            <button className="btn bg-linear-to-r from-red-400 to-orange-400 text-white mt-4">Login</button>
+            <button className="btn bg-linear-to-r from-red-400 to-orange-400 text-white mt-4">
+              Login
+            </button>
           </fieldset>
         </div>
       </form>
