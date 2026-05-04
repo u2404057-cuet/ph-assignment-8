@@ -51,7 +51,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end space-x-4">
+      <div className="navbar-end flex flex-wrap-reverse gap-3 md:flex-row">
         <div className="relative">
           <div className="absolute -top-2 -right-2 hidden">
             <p className="w-5 h-5 bg-red-400 rounded-full flex items-center justify-center text-white">

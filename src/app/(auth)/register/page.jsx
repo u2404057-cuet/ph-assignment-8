@@ -63,8 +63,7 @@ const RegisterPage = () => {
                 Login
               </Link>
             </p>
-
-            <button className="btn bg-linear-to-r from-red-400 to-orange-400 mt-4">Register</button>
+            <button className="btn bg-linear-to-r from-red-400 to-orange-400 mt-4 text-white">Register</button>
           </fieldset>
         </div>
       </form>
