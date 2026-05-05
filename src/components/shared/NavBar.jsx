@@ -52,9 +52,9 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent font-extrabold text-4xl">
+        <Link href={'/'} className="btn btn-ghost bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent font-extrabold text-4xl">
           SunCart
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

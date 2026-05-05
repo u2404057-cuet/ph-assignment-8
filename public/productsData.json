@@ -1,0 +1,113 @@
+[
+    {
+      "id": 1,
+      "name": "UV Protection Sunglasses",
+      "brand": "SunShade",
+      "price": 15,
+      "rating": 4.7,
+      "stock": 10,
+      "description": "Block harmful UV rays in style with these lightweight, polarized sunglasses. Perfect for beach days, road trips, or casual summer outings. Features scratch-resistant lenses and a durable frame.",
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600",
+      "category": "Accessories"
+    },
+    {
+      "id": 2,
+      "name": "Floral Beach Dress",
+      "brand": "CoastalWave",
+      "price": 35,
+      "rating": 4.5,
+      "stock": 18,
+      "description": "A breezy, lightweight floral dress made from 100% breathable cotton. Ideal for beach walks, pool parties, or summer brunches. Available in vibrant tropical prints.",
+      "image": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600",
+      "category": "Clothing"
+    },
+    {
+      "id": 3,
+      "name": "SPF 50 Sunscreen Lotion",
+      "brand": "GlowGuard",
+      "price": 12,
+      "rating": 4.8,
+      "stock": 40,
+      "description": "Broad-spectrum SPF 50 sunscreen that protects against UVA and UVB rays. Water-resistant formula lasts up to 8 hours. Lightweight, non-greasy, and suitable for all skin types.",
+      "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600",
+      "category": "Skincare"
+    },
+    {
+      "id": 4,
+      "name": "Inflatable Beach Float",
+      "brand": "AquaFun",
+      "price": 22,
+      "rating": 4.4,
+      "stock": 15,
+      "description": "Giant inflatable flamingo pool float perfect for lounging in the water. Made from heavy-duty PVC, supports up to 200 lbs. Deflates quickly for easy storage and travel.",
+      "image": "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=600",
+      "category": "Beach Accessories"
+    },
+    {
+      "id": 5,
+      "name": "Waterproof Beach Bag",
+      "brand": "ShoreReady",
+      "price": 28,
+      "rating": 4.6,
+      "stock": 22,
+      "description": "Spacious waterproof tote bag with a zippered wet pocket, insulated bottle holder, and inner organizer. Fits a towel, sunscreen, snacks, and more. Sand-resistant lining for easy cleanup.",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600",
+      "category": "Beach Accessories"
+    },
+    {
+      "id": 6,
+      "name": "Men's Swim Trunks",
+      "brand": "TidalWear",
+      "price": 20,
+      "rating": 4.3,
+      "stock": 30,
+      "description": "Quick-dry swim trunks with a mesh lining and adjustable drawstring waist. Features a zippered back pocket for essentials. Available in bold summer patterns and solid colors.",
+      "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600",
+      "category": "Clothing"
+    },
+    {
+      "id": 7,
+      "name": "Portable Beach Umbrella",
+      "brand": "ShadeMaster",
+      "price": 45,
+      "rating": 4.9,
+      "stock": 8,
+      "description": "Heavy-duty 7ft beach umbrella with UPF 50+ canopy and wind-resistant tilt mechanism. Comes with a sand anchor and carrying bag. Keeps you cool and protected all day long.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600",
+      "category": "Beach Accessories"
+    },
+    {
+      "id": 8,
+      "name": "Aloe Vera After-Sun Gel",
+      "brand": "GlowGuard",
+      "price": 9,
+      "rating": 4.7,
+      "stock": 50,
+      "description": "Soothing aloe vera gel that instantly cools and hydrates sun-exposed skin. Formulated with vitamin E and chamomile extract to reduce redness and peeling. Alcohol-free and fragrance-free.",
+      "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600",
+      "category": "Skincare"
+    },
+    {
+      "id": 9,
+      "name": "Polarized Sport Sunglasses",
+      "brand": "SunShade",
+      "price": 25,
+      "rating": 4.6,
+      "stock": 12,
+      "description": "Sporty wraparound sunglasses with polarized lenses that eliminate glare on water and sand. Lightweight TR90 frame with rubber grip nose pads. Perfect for fishing, cycling, and outdoor sports.",
+      "image": "https://images.unsplash.com/photo-1508296695146-257a814070b4?w=600",
+      "category": "Accessories"
+    },
+    {
+      "id": 10,
+      "name": "Women's Straw Sun Hat",
+      "brand": "CoastalWave",
+      "price": 18,
+      "rating": 4.5,
+      "stock": 25,
+      "description": "Wide-brim woven straw hat with a UPF 50+ rating and adjustable inner band. Packable and foldable for travel. Pairs perfectly with any beach or summer festival outfit.",
+      "image": "https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?w=600",
+      "category": "Accessories"
+    }
+  ]
+  
