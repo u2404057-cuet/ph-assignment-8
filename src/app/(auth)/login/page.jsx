@@ -31,7 +31,6 @@ const LoginPage = () => {
         rememberMe: true,
         callbackURL: "/",
     });
-    console.log(loginUserData, error);
 
     if(error){
         toast.danger(error.message);

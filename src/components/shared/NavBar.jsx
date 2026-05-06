@@ -23,7 +23,7 @@ const links = (
 const NavBar = () => {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
-  console.log(user);
+  
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
