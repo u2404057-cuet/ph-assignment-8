@@ -12,7 +12,7 @@ const Hero = async () => {
   console.log(products);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 container mx-auto">
       <Image
         src={offerImage}
         alt="summer offer"
@@ -21,7 +21,7 @@ const Hero = async () => {
         className="container mx-auto m-5 rounded-2xl"
       ></Image>
 
-      <p className="text-center font-bold text-4xl">Popular Deals</p>
+      <p className="text-center font-bold text-4xl border-y border-gray-200 py-5">Popular Deals</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 container mx-auto gap-5">
         {
             products.slice(0,3).map(product => (
