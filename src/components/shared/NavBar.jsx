@@ -79,7 +79,7 @@ const NavBar = () => {
               alt={user.name}
               width={60}
               height={60}
-              className="rounded-full border-2"
+              className="rounded-full border-2 w-10 h-10"
             ></Image>
             <button
               onClick={async () => {
