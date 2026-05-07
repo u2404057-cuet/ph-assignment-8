@@ -61,18 +61,12 @@ const NavBar = () => {
       </div>
       <div className="navbar-end flex flex-wrap-reverse gap-3 md:flex-row">
         <div className="relative">
-          <div className="absolute -top-2 -right-2 hidden">
-            <p className="w-5 h-5 bg-red-400 rounded-full flex items-center justify-center text-white">
-              1
-            </p>
-          </div>
-          <ShoppingCart className="w-7 h-7"></ShoppingCart>
         </div>
 
         {isPending ? (
           <span className="loading loading-spinner loading-lg"></span>
         ) : user ? (
-          <div className="flex items-center flex-col md:flex-row">
+          <div className="flex items-center flex-col md:flex-row gap-3">
             <p className="">Hello, {user.name}</p>
             <Image
               src={user.image}
