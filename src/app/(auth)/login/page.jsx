@@ -11,7 +11,7 @@ const LoginPage = () => {
 
 
   const handleRegisterWithGoogle = async () => {
-    const { data, error, u } = await authClient.signIn.social({
+    const { data, error } = await authClient.signIn.social({
       provider: "google",
     });
     if (error) toast.danger(error.message);

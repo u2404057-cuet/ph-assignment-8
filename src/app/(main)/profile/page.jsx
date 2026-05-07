@@ -18,10 +18,7 @@ const ProfilePage = () => {
       name: name,
     });
 
-    console.log(updatedData, error);
-    console.log(name, photo);
-    console.log(user);
-    // window.location.reload();
+    window.location.reload();
   };
 
   //   console.log(user);
@@ -35,7 +32,7 @@ const ProfilePage = () => {
         <>
           <div className="p-5">
             <Image
-              src={user?.image}
+              src={user?.image || "https://cdn.pixabay.com/photo/2021/11/30/11/04/login-6835087_1280.png"}
               alt={user?.name}
               width={400}
               height={400}
@@ -46,8 +43,8 @@ const ProfilePage = () => {
             <p className="text-3xl font-bold">{user?.name}</p>
             <p className="">Email: {user?.email}</p>
             <Modal>
-              <Button variant="" className="btn">
-                Open Contact Form
+              <Button variant="" className="btn hover:btn-info">
+              Update your profile
               </Button>
               <Modal.Backdrop>
                 <Modal.Container placement="auto">
@@ -57,12 +54,7 @@ const ProfilePage = () => {
                       <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
                         <Envelope className="size-5" />
                       </Modal.Icon>
-                      <Modal.Heading>Contact Us</Modal.Heading>
-                      <p className="mt-1.5 text-sm leading-5 text-muted">
-                        Fill out the form below and we will get back to you. The
-                        modal adapts automatically when the keyboard appears on
-                        mobile.
-                      </p>
+                      <Modal.Heading>Update info</Modal.Heading>
                     </Modal.Header>
                     <Modal.Body className="p-6">
                       <Surface variant="default">
@@ -70,9 +62,6 @@ const ProfilePage = () => {
                           className="card bg-base-100 w-full max-w-sm"
                           onSubmit={handleSubmit(handleUpdateUser)}
                         >
-                          <h1 className="font-bold text-2xl text-center mt-4 bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-                            Update info
-                          </h1>
                           <div className="card-body">
                             <fieldset className="fieldset">
                               <label className="label">Name</label>
